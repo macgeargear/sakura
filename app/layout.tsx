@@ -1,22 +1,34 @@
-import './globals.css'
+import { cn } from "@/lib/utils";
+import "./globals.css";
+
+import { Inter } from "next/font/google";
+import Navbar from "@/components/Navbar";
+import { Toaster } from "@/components/ui/toaster";
 
 export const metadata = {
-  title: 'Next.js and Supabase Starter Kit',
-  description: 'The fastest way to build apps with Next.js and Supabase',
-}
+  title: "Next.js and Supabase Starter Kit",
+  description: "The fastest way to build apps with Next.js and Supabase",
+};
+
+const inter = Inter({ subsets: ["latin"] });
 
 export default function RootLayout({
   children,
 }: {
-  children: React.ReactNode
+  children: React.ReactNode;
 }) {
   return (
     <html lang="en">
-      <body className="bg-background text-foreground">
-        <main className="min-h-screen flex flex-col items-center">
-          {children}
-        </main>
+      <body
+        className={cn(
+          "min-h-screen font-sans antialiased grainy",
+          inter.className
+        )}
+      >
+        {/* <Navbar /> */}
+        <Toaster />
+        {children}
       </body>
     </html>
-  )
+  );
 }
