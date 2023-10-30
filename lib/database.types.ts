@@ -27,6 +27,40 @@ export interface Database {
         }
         Relationships: []
       }
+      user_vocabs: {
+        Row: {
+          id: string
+          remembered: boolean
+          user_id: string
+          vocab_id: string
+        }
+        Insert: {
+          id?: string
+          remembered: boolean
+          user_id: string
+          vocab_id: string
+        }
+        Update: {
+          id?: string
+          remembered?: boolean
+          user_id?: string
+          vocab_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "user_vocabs_user_id_fkey"
+            columns: ["user_id"]
+            referencedRelation: "users"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "user_vocabs_vocab_id_fkey"
+            columns: ["vocab_id"]
+            referencedRelation: "vocabs"
+            referencedColumns: ["guid"]
+          }
+        ]
+      }
       vocabs: {
         Row: {
           expression: string

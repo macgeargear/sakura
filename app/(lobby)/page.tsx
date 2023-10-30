@@ -1,15 +1,8 @@
-import DeployButton from "../../components/DeployButton";
-import AuthButton from "../../components/form/AuthButton";
 import { createClient } from "@/utils/supabase/server";
-import Header from "@/components/Header";
 import { cookies } from "next/headers";
-import MaxWidthWrapper from "@/components/MaxWidthWrapper";
-import Navbar from "@/components/Navbar";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
 import { buttonVariants } from "@/components/ui/button";
-import { redirect } from "next/navigation";
-import { SiteHeader } from "@/components/layouts/SiteHeader";
 import { Shell } from "@/components/shells/Shell";
 import Balancer from "react-wrap-balancer";
 import { Course } from "@/types";
@@ -62,7 +55,7 @@ export default async function Index() {
             "rounded-full items-center text-center text-md font-semibold"
           )}
         >
-          🌸 Sakura
+          🌸Sakura
         </Balancer>
         <Balancer
           as="h1"
