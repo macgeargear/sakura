@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button";
 import { Icons } from "../Icons";
 import { createClient } from "@/utils/supabase/client";
 import { Provider } from "@supabase/supabase-js";
+import { siteConfig } from "@/config/site";
 
 const oauthProviders = [
   { name: "Google", icon: "google" },
@@ -25,7 +26,7 @@ export function OAuthSignIn() {
     await supabase.auth.signInWithOAuth({
       provider: name,
       options: {
-        redirectTo: "http://localhost:3000/auth/callback",
+        redirectTo: `${siteConfig.url}/auth/callback`,
       },
     });
   };

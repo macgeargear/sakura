@@ -14,7 +14,7 @@ export const siteConfig = {
   name: "Sakura",
   description:
     "An open source e-commerce skateshop build with everything new in Next.js 13.",
-  url: "https://skateshop.sadmn.com",
+  url: "https://sakura-git-main-macgeargear-s-team.vercel.app",
   ogImage: "https://skateshop.sadmn.com/opengraph-image.png",
   links,
   mainNav: [
