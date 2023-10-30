@@ -52,6 +52,20 @@ export interface DataTableFilterableColumn<TData>
   options: Option[];
 }
 
+export interface Course {
+  title: string;
+  image?: string;
+  icon: React.ComponentType<{ className?: string }>;
+  subcategories?: SubCourse[];
+}
+
+export interface SubCourse {
+  title: string;
+  description?: string;
+  image?: string;
+  slug: string;
+}
+
 export interface SubscriptionPlan {
   id: "basic" | "standard" | "pro";
   name: string;

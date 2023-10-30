@@ -1,5 +1,13 @@
 import { AvatarIcon, ImageIcon } from "@radix-ui/react-icons";
-import { Flower, Flower2Icon } from "lucide-react";
+import {
+  Flower,
+  Flower2Icon,
+  Tally1,
+  Tally2,
+  Tally3,
+  Tally4,
+  Tally5,
+} from "lucide-react";
 
 type IconProps = React.HTMLAttributes<SVGElement>;
 
@@ -216,4 +224,8 @@ export const Icons = {
   avatar: AvatarIcon,
   placeholder: ImageIcon,
   flower: (props: IconProps) => <Flower />,
+  two: (props: IconProps) => <Tally2 />,
+  three: (props: IconProps) => <Tally3 />,
+  four: (props: IconProps) => <Tally4 />,
+  five: (props: IconProps) => <Tally5 />,
 };

@@ -26,7 +26,7 @@ export default async function AuthButton() {
       >
         Go back
       </Link>
-      <Button variant="secondary" size="sm">
+      <Button variant="outline" size="sm">
         Logout
       </Button>
     </form>

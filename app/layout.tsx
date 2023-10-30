@@ -4,6 +4,7 @@ import "./globals.css";
 import { Inter } from "next/font/google";
 import Navbar from "@/components/Navbar";
 import { Toaster } from "@/components/ui/toaster";
+import { fontHeading, fontMono, fontSans } from "@/lib/font";
 
 export const metadata = {
   title: "Next.js and Supabase Starter Kit",
@@ -21,8 +22,11 @@ export default function RootLayout({
     <html lang="en">
       <body
         className={cn(
-          "min-h-screen font-sans antialiased grainy",
-          inter.className
+          "min-h-screen font-sans antialiased",
+          fontSans.variable,
+          fontMono.variable,
+          fontHeading.variable
+          // inter.className
         )}
       >
         {/* <Navbar /> */}

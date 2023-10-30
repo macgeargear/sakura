@@ -91,6 +91,16 @@ export function SiteHeader({ user }: SiteHeaderProps) {
                         <DropdownMenuShortcut>⌘D</DropdownMenuShortcut>
                       </Link>
                     </DropdownMenuItem>
+                    <DropdownMenuItem asChild>
+                      <Link href="/dashboard/vocab">
+                        <DashboardIcon
+                          className="mr-2 h-4 w-4"
+                          aria-hidden="true"
+                        />
+                        Vocab
+                        <DropdownMenuShortcut>⌘V</DropdownMenuShortcut>
+                      </Link>
+                    </DropdownMenuItem>
                     <DropdownMenuItem asChild disabled>
                       <Link href="/dashboard/settings">
                         <GearIcon className="mr-2 h-4 w-4" aria-hidden="true" />
