@@ -3,7 +3,7 @@ import "./globals.css";
 
 import { Inter } from "next/font/google";
 import Navbar from "@/components/Navbar";
-import { Toaster } from "@/components/ui/toaster";
+import { Toaster } from "sonner";
 import { fontHeading, fontMono, fontSans } from "@/lib/font";
 
 export const metadata = {
@@ -30,7 +30,7 @@ export default function RootLayout({
         )}
       >
         {/* <Navbar /> */}
-        <Toaster />
+        <Toaster richColors />
         {children}
       </body>
     </html>

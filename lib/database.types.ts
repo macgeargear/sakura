@@ -36,7 +36,7 @@ export interface Database {
         }
         Insert: {
           id?: string
-          remembered: boolean
+          remembered?: boolean
           user_id: string
           vocab_id: string
         }
@@ -57,31 +57,31 @@ export interface Database {
             foreignKeyName: "user_vocabs_vocab_id_fkey"
             columns: ["vocab_id"]
             referencedRelation: "vocabs"
-            referencedColumns: ["guid"]
+            referencedColumns: ["uuid"]
           }
         ]
       }
       vocabs: {
         Row: {
           expression: string
-          guid: string
           meaning: string
           reading: string | null
           tags: string | null
+          uuid: string
         }
         Insert: {
           expression: string
-          guid: string
           meaning: string
           reading?: string | null
           tags?: string | null
+          uuid?: string
         }
         Update: {
           expression?: string
-          guid?: string
           meaning?: string
           reading?: string | null
           tags?: string | null
+          uuid?: string
         }
         Relationships: []
       }

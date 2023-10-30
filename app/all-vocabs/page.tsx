@@ -20,8 +20,10 @@ import {
 import { Shell } from "@/components/shells/Shell";
 import { cookies } from "next/headers";
 import { createClient } from "@/utils/supabase/server";
-import { VocabTable } from "@/components/vocab/VocabTable";
-import { columns } from "@/components/vocab/VocabColumn";
+import { VocabTable } from "@/components/vocabTable/VocabTable";
+import { columns } from "@/components/vocabTable/VocabColumn";
+import { AllVocabsTable } from "@/components/vocabTable/AllVocabsTable";
+import { allVocabsColumns } from "@/components/vocabTable/AllVocabsColumn";
 
 export default async function Page() {
   const cookieStore = cookies();
@@ -32,20 +34,7 @@ export default async function Page() {
 
   console.log(user?.id);
 
-  const { data: vocabs } = await supabase
-    .from("vocabs")
-    .select("*")
-    .range(0, 20);
-
-  let { data } = await supabase.from("user_vocabs").select(`
-    *,
-    vocabs (
-      expression,
-      reading,
-      meaning,
-      tags
-    )
-  `);
+  const { data: vocabs } = await supabase.from("vocabs").select("*");
 
   return (
     <Shell className="max-w-6xl pt-0 md:pt-0 min-h-screen">
@@ -63,7 +52,7 @@ export default async function Page() {
         <h2 className="text-xl font-semibold sm:text-2xl">All Vocabs</h2>
       </section>
       <section className="space-y-5 pb-2.5">
-        <VocabTable vocabs={vocabs as Vocab[]} />
+        <AllVocabsTable data={vocabs as Vocab[]} columns={allVocabsColumns} />
       </section>
     </Shell>
   );
